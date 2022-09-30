@@ -1,20 +1,68 @@
 package tests.day17;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+import pages.HotelMyCamp_Page;
+import pages.ZeroBankPage;
+import utilities.ConfigReader;
+import utilities.Driver;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.WeakHashMap;
+
 public class day17_Odev02 {
-    //Yeni bir Class Olusturun : C03_SoftAssert
-    //“http://zero.webappsecurity.com/” Adresine gidin
-    //Sign in butonuna basin
-    //Login kutusuna “username” yazin
-    //Password kutusuna “password” yazin
-    //Sign in tusuna basin
-    //Online banking menusu icinde Pay Bills sayfasina gidin
-    //“Purchase Foreign Currency” tusuna basin
-    //“Currency” drop down menusunden Eurozone’u secin
-    //soft assert kullanarak "Eurozone (Euro)" secildigini test edin
-    //soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin  "Select One",
-        // "Australia (dollar)", "Canada (dollar)","Switzerland (franc)","China  (yuan)","Denmark (krone)",
-        // "Eurozone (euro)","Great Britain (pound)","Hong Kong  (dollar)","Japan (yen)","Mexico (peso)",
-        // "Norway (krone)","New Zealand  (dollar)","Sweden (krona)","Singapore (dollar)","Thailand (baht)"
+    @Test
+    public void test01() {
+        ZeroBankPage zeroBankPage = new ZeroBankPage();
+        //Yeni bir Class Olusturun : C03_SoftAssert
+
+        //“http://zero.webappsecurity.com/” Adresine gidin
+        Driver.getDriver().get(ConfigReader.getProperty("zeroBankUrl"));
+        //Sign in butonuna basin
+        zeroBankPage.signIn.click();
+        //Login kutusuna “username” yazin
+        zeroBankPage.loginBox.sendKeys(ConfigReader.getProperty("zeroBankUserName"));
+        //Password kutusuna “password” yazin
+        zeroBankPage.passwordBox.sendKeys(ConfigReader.getProperty("zeroBankPassword"));
+        //Sign in tusuna basin // Bu site güvenli bağlantı sağlayamıyor uyarısı var bu uyarıyı navigate.back komutu ile asabiliz
+        zeroBankPage.submitSignIn.click();
+        //** Bu site güvenli bağlantı sağlayamıyor uyarısı nı gecmek icin navigate.back yapın
+        Driver.getDriver().navigate().back();
+        //Online banking menusu icinde Pay Bills sayfasina gidin
+        zeroBankPage.onlineBanking.click();
+        zeroBankPage.payBills.click();
+        //“Purchase Foreign Currency” tusuna basin
+        zeroBankPage.purForCur.click();
+        //“Currency” drop down menusunden Eurozone’u secin
+        Select select = new Select(zeroBankPage.currencyDropDownMenu);
+        select.selectByVisibleText("Eurozone (euro)");
+        //soft assert kullanarak "Eurozone (Euro)" secildigini test edin
+        SoftAssert softAssert =new SoftAssert();
+        softAssert.assertEquals(select.getFirstSelectedOption().getText(),"Eurozone (euro)");
+        //soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin  "Select One",
+
+        List<WebElement> expectedList = new ArrayList<>();
+        List<WebElement> actualList = zeroBankPage.currencyDropDownMenuList;
+        for (int i = 0; i < actualList.size(); i++) {
+            expectedList.add(actualList.get(i));
+        }
+        for (int i = 0; i < expectedList.size(); i++) {
+            softAssert.assertEquals(expectedList.get(i).getText(),actualList.get(i).getText());
+            System.out.println(expectedList+"      ");
+            System.out.println(actualList.get(i).getText());
+
+
+
+        }
+        softAssert.assertAll();
+    }
+
 }
 
 /*

@@ -1,4 +1,4 @@
-package java_tekrar.day16;
+package tests.day16;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBaseBeforeClassAfterClass;
 
-public class day16_Odev extends TestBaseBeforeClassAfterClass {
+public class day16_Odev01 extends TestBaseBeforeClassAfterClass {
     // 3) Aşağıdaki adları kullanarak 4 test metodu oluşturun ve gerekli testleri yapin
     // 1) Bir class oluşturun: YoutubeAssertions
     // 2) https://www.youtube.com adresine gidin
@@ -17,7 +17,7 @@ public class day16_Odev extends TestBaseBeforeClassAfterClass {
     driver.get("https://www.youtube.com");
     String expectedTittle = "YouTube";
     String actualTittle = driver.getTitle();
-        Assert.assertEquals("Test gecmediiiiiiii!",expectedTittle,actualTittle);
+        Assert.assertEquals(expectedTittle,actualTittle,"Test gecmediiiiiiii!");
 
     }
 
@@ -38,7 +38,7 @@ public class day16_Odev extends TestBaseBeforeClassAfterClass {
         // ○ wrongTitleTest => Sayfa basliginin “youtube” olmadigini dogrulayin
         String expectedTittle = "youtube";
         String actualTittle = driver.getTitle();
-        Assert.assertNotEquals("Test gecmediiiiiiii!",expectedTittle,actualTittle);
+        Assert.assertNotEquals(expectedTittle,actualTittle, "Test gecmediiiiiiii!");
     }
 
 

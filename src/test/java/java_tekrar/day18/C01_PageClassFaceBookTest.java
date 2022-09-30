@@ -1,4 +1,4 @@
-package tests.day18;
+package java_tekrar.day18;
 
 import com.github.javafaker.Faker;
 import org.testng.Assert;

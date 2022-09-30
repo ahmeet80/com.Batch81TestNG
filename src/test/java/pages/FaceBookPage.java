@@ -9,7 +9,7 @@ public class FaceBookPage {
     public FaceBookPage(){ // constructor
 
         PageFactory.initElements(Driver.getDriver(),this);
-
+        //WebElement email = driver.FindElement(By.xpath("//*[@id='email'"));
     }
     @FindBy (xpath = "//*[@id='email']")
     public WebElement email;
