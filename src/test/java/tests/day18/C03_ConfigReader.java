@@ -4,14 +4,14 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HotelMyCamp_Page;
+import pages.HotelMyCampPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 public class C03_ConfigReader {
-    @Test
+    @Test (groups = "gp2")
     public void test01() {
-        HotelMyCamp_Page hotelMyCamp_page = new HotelMyCamp_Page();
+        HotelMyCampPage hotelMyCamp_page = new HotelMyCampPage();
         /*
         Page class'ındaki locate'lerimize ulaşabilmek için
         Page classımızdan bir obje oluşturarak, oluşturmuş olduğumuz obje ile

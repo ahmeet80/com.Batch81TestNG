@@ -1,0 +1,9 @@
+
+
+    Keşif Testi (Exploratory Testing) , test senaryolarının önceden oluşturulmadığı, testçilerin sistemi test anında kontrol
+  ettiği bir tür yazılım testidir. Herhangi bir test senaryosuna bağlı kalmaksızın yazılımları serbestçe keşfederek
+  buldukları bug’ları raporlamasına dayanır. Test uzmanlarının minimum planlama ve maksimum test uygulamasına katıldığı
+  uygulamalı bir yaklaşımdır. Testin yürütülmesinden önce neyin test edileceğine dair fikirleri not edebilirler.
+    Keşif Testi (Exploratory Testing), diğer test yaklaşımlarında kolayca kapsanmayan hataları ve eksiklikleri keşfetmeye,
+  ortaya çıkarmaya dayanır. Özellikle yazılım test döngüsünün başlarında sıkça başvurulan bir test türüdür. Test uzmanı
+  açısından ise istediği şekilde son kullanıcı senaryoları oluşturma imkanı olduğu için eğlencelidir.

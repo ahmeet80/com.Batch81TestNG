@@ -18,7 +18,7 @@ public abstract class TestBaseBeforeMethodAfterMethod { // diger classlardan bur
     protected String tarih; // dinamik tarih tanımlama icin
     // TestNG framework'unde @Before QAfter notasyonları yerine @BeforeMethod ve @AfterMethod kullanılır
     // çalışma prensibi JUnitteki @Before, @After ile aynıdır
-    @BeforeMethod
+    @BeforeMethod (groups = {"gp1","gp2"})
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -28,7 +28,7 @@ public abstract class TestBaseBeforeMethodAfterMethod { // diger classlardan bur
         DateTimeFormatter formater = DateTimeFormatter.ofPattern("YYMMddHHmmss");
         tarih = date.format(formater);
     }
-    @AfterMethod
+    @AfterMethod (groups = {"gp1","gp2"})
     public void tearDown() {
 
         driver.quit();

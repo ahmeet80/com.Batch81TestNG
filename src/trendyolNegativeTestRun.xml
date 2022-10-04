@@ -1,0 +1,16 @@
+
+
+<!-- Trendyol sitesi negatif login testi-->
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="trendyolNegatifLoginTest">
+    <test name="negatifTest">
+        <classes>
+            <class name="tests.TrendyolTests.TrendyolTest">
+                <methods>
+                    <include name="testNegative"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

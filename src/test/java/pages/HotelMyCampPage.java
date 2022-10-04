@@ -5,8 +5,8 @@
     import org.openqa.selenium.support.PageFactory;
     import utilities.Driver;
 
-    public class HotelMyCamp_Page {
-        public HotelMyCamp_Page(){
+    public class HotelMyCampPage {
+        public HotelMyCampPage(){
 
             PageFactory.initElements(Driver.getDriver(),this);
         }
@@ -22,4 +22,22 @@
 
         @FindBy (xpath = "//*[text()='Try again please']")
         public WebElement girisYapilamadi;
+
+        @FindBy (xpath = "(//span[@class='title'])[3]")
+        public WebElement hotelManagement;
+
+        @FindBy(xpath = "(//*[@class='icon-calendar'])[4]")
+        public WebElement roomReservation;
+
+        @FindBy(xpath = "//*[text()='Add Room Reservation ']")
+        public WebElement addRoom;
+
+        @FindBy(xpath = "//select[@id='IDUser']")
+        public WebElement idUser;
+
+        @FindBy(xpath = "//div[@class='bootbox-body']")
+        public WebElement getRoomReservationText;
+
+        @FindBy(xpath = "//button[@class='btn btn-primary']")
+        public WebElement okButton;
     }

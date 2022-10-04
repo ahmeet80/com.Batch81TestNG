@@ -1,0 +1,16 @@
+
+
+<!-- Trendyol sitesi pozitif login testi-->
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="trendyolPozitifLoginTest">
+    <test name="pozitifTest">
+        <classes>
+            <class name="tests.TrendyolTests.TrendyolTest">
+                <methods>
+                    <include name="testPositive"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
