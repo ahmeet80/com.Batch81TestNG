@@ -14,7 +14,6 @@ import java.time.format.DateTimeFormatter;
 
 public abstract class TestBaseBeforeClassAfterClass {
     protected WebDriver driver;
-    protected Actions actions;
     protected String tarih; // dinamik tarih tanımlama icin
     // TestNG framework'unde @Before QAfter notasyonları yerine @BeforeMethod ve @AfterMethod kullanılır
     // çalışmaprensibi JUnitteki @Before, @After ile aynıdır
@@ -27,6 +26,6 @@ public abstract class TestBaseBeforeClassAfterClass {
     }
     @AfterClass (groups = {"gp1","gp2"})
     public void tearDown() {
-        //driver.quit();
+        driver.quit();
     }
 }

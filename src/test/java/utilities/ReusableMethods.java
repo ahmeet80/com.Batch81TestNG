@@ -57,7 +57,7 @@ public class ReusableMethods {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
     }
-    //==========Return a list of string given a list of Web Element====////
+    //==========Return a list of string given a list of Web Element(List olaraka verilen WebElementi String List olaraka dondı-uren Method)====////
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : list) {

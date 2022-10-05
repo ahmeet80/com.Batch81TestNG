@@ -16,7 +16,7 @@ public class C01_ScreenShotReusableMethod {
         Driver.getDriver().get("https://hepsiburada.com");
 
         // Ve sayfanin resmini aliniz
-        ReusableMethods.getScreenshot("hepsiburada");
+        ReusableMethods.getScreenshot("Hepsiburada");
 
         // Sayfayi kapatiniz
         Driver.closeDriver();
@@ -33,6 +33,6 @@ public class C01_ScreenShotReusableMethod {
         amazonPage.aramaKutusu.sendKeys("Nutella", Keys.ENTER);
 
         // Arama sonuc yazısının Wbelementinin resmini alınız
-        ReusableMethods.getScreenshotWebElement("AramaSonucWE", amazonPage.aramaSonucWE);
+        ReusableMethods.getScreenshotWebElement("AramaSonucWE",amazonPage.aramaSonucWE);
     }
 }

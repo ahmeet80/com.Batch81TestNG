@@ -15,8 +15,8 @@ Ve son olarak grupladigimiz methodlara hangi package altinda oldugunu belirtmemi
             </run>
         </groups>
         <packages>
-            <package name="tests.day16"></package>
-            <package name="tests.day17"></package>
+            <package name="tests.day16"/>
+            <package name="tests.day17"/>
         </packages>
     </test>
     <test name="Belirli Gruplar2>">
@@ -26,7 +26,7 @@ Ve son olarak grupladigimiz methodlara hangi package altinda oldugunu belirtmemi
             </run>
         </groups>
         <packages>
-            <package name="tests.day18"></package>
+            <package name="tests.day18"/>
         </packages>
     </test>
 </suite>

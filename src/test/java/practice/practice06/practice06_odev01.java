@@ -5,7 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.SaucedemoPage;
+import pages.SauceDemoPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -15,7 +15,7 @@ public class practice06_odev01 {
         //     * Navigate to  https://www.saucedemo.com/
         Driver.getDriver().get(ConfigReader.getProperty("scdmUrl"));
         //     * Enter the username  as standard_user
-        SaucedemoPage saucedemoPage = new SaucedemoPage();
+        SauceDemoPage saucedemoPage = new SauceDemoPage();
         saucedemoPage.userName.sendKeys(ConfigReader.getProperty("scdmUserName"));
 
         //     * Enter the password as   secret_sauce
@@ -29,6 +29,7 @@ public class practice06_odev01 {
         select.selectByIndex(2);
         //       and verify that PRICE (LOW TO HIGH) is visible
         Assert.assertTrue(select.getFirstSelectedOption().isDisplayed());
+        Driver.closeDriver();
 
     }
 
